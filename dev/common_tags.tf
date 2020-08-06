@@ -1,6 +1,6 @@
 locals {
   common_tags = "${map(
-    "ModuleName", "ci_cd_pipeline",
+    "ModuleName", "custodian",
     "CreatedFrom", "terraform",
     "SERVICE",terraform.workspace,
     "ACCOUNT",var.ACCOUNT,
