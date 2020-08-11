@@ -2,7 +2,7 @@
 # iam roles
 #
 resource "aws_iam_role" "dataops-codebuild" {
-  name = "${var.account}-${var.service}-${var.environment}-iam-codebuild"
+  name = "${var.account}-${var.environment}-iam-codebuild-custodian"
 
   assume_role_policy = <<EOF
 {
@@ -23,7 +23,7 @@ EOF
 
 resource "aws_iam_role_policy" "dataops-codebuild" {
   role = aws_iam_role.dataops-codebuild.name
-  name = "${var.account}-${var.service}-${var.environment}-iam-policy-codebuild"
+  name = "${var.account}-${var.environment}-iam-policy-codebuild-custodian"
 
   policy = <<POLICY
 {

@@ -1,0 +1,1 @@
+variable "custodian_sqs_name"{}

@@ -1,5 +1,5 @@
 resource "aws_iam_role" "dataops-codepipeline" {
-  name = "${var.account}-${var.service}-${var.environment}-iam-codepipelines"
+  name = "${var.account}-${var.environment}-iam-codepipelines-custodian"
 
   assume_role_policy = <<EOF
 {
@@ -20,7 +20,7 @@ EOF
 
 resource "aws_iam_role_policy" "dataops-codepipeline" {
   role   = aws_iam_role.dataops-codepipeline.name
-  name = "${var.account}-${var.service}-${var.environment}-iam-policy-codepipeline"
+  name = "${var.account}-${var.environment}-iam-policy-codepipeline-custodian"
   policy = <<POLICY
 {
     "Version": "2012-10-17",
